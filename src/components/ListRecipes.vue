@@ -3,21 +3,7 @@
 
 <p>lorem ipsum</p>
 
-<template>
-  <div class="q-pa-md">
-    <q-table
-      title="Treats"
-      :rows="rows"
-      :columns="columns"
-      row-key="name"
-      hide-header
-      hide-bottom
-    />
-  </div>
-</template>
-
-
-  </q-page>
+    </q-page>
 
 </template>
 
@@ -33,7 +19,6 @@ export default {
 .list{
   margin-top: 10px;
 }
-
 
 
 </style>

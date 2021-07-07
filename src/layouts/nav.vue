@@ -13,7 +13,7 @@
         />
 
         <q-toolbar-title>
-          Recips
+          Recipes
         </q-toolbar-title>
       </q-toolbar>
 
