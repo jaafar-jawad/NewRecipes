@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page padding class="add">
 
 
 
@@ -13,9 +13,10 @@
               color="teal"
               type="name"
                 label=" ADD New Recipes *"
+                v-model="name"
 
               />
-          <q-btn class="zer" color="secondary" label="ADD" />
+          <q-btn   @click="addRecipes" class="zer" color="secondary" label="ADD" />
 
         </q-card-section>
          <q-card-section class="q-pt-none ">
@@ -24,8 +25,9 @@
               type="name"
                 label=" ADD New Recipes *"
 
+
               />
-          <q-btn class="zer" color="secondary" label="ADD" />
+          <q-btn    class="zer" color="secondary" label="ADD" />
 
         </q-card-section>
 
@@ -42,7 +44,6 @@
 
 <script>
 import { ref } from 'vue';
-
 export default {
 
   name: 'AddRecipes',
@@ -52,7 +53,23 @@ export default {
             alert: ref(false),
 
     }
+  },
+
+      data(){
+        return{
+          name:'',
+          dec:''
+          }
+        },
+
+
+  methods:{
+    addRecipes(){
+    this.$store.dispatch('addRecipes')
+    }
   }
+
+
 
 }
 
@@ -63,7 +80,6 @@ export default {
 .dilogadd{
 
   text-align: center;
-  min-height: 10px;
 }
 
 .q-pt-none{
@@ -80,6 +96,7 @@ export default {
 
   margin-top: 10px;
 }
+
 
 
 </style>

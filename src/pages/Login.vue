@@ -1,5 +1,6 @@
 <template>
-  <q-page padding>
+
+  <q-page padding class="page">
     <!-- content -->
 
 
@@ -17,18 +18,23 @@
               <q-input
                 color="teal"
                 type="name"
-                label="First name *"
+                label="user name *"
                 hint=" first Name "
+                v-model="user"
 
               />
               <q-input
               color="teal"
-              type="name"
+              type="password"
                 filled
-                label=" Enter Your Last name *"
-                hint="Last name"
+                label=" Enter Your password *"
+                hint="password"
+                v-model="pass"
 
               />
+
+           <q-btn  class="zer" color="secondary" label="Login" />
+
 
       </q-form>
 
@@ -38,6 +44,20 @@
 <script>
 export default {
    name: 'Login',
+
+    data(){
+      return{
+
+        user :"",
+        pass:""
+
+      }
+
+
+
+
+    }
+
 }
 </script>
 
@@ -48,7 +68,7 @@ export default {
 
 .PageTitle{
 
-margin-top:70px;
+margin-top:50px;
 text-align: center;
 font-family: cursive;
 }
@@ -58,10 +78,11 @@ font-family: cursive;
 max-width: 500px ;
   text-align: center;
   margin: 0 auto ;
-  margin-top: 100px;
-  border: 2px solid rgb(153, 151, 151);
+  margin-top: 50px;
+  border: 2px solid rgb(25, 158, 140);
   border-radius: 10px;
   padding: 15px;
 }
+
 
 </style>

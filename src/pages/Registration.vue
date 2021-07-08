@@ -18,6 +18,7 @@
             type="name"
             label="First name *"
             hint=" first Name "
+            v-model="first"
 
           />
           <q-input
@@ -26,7 +27,7 @@
             filled
             label=" Enter Your Last name *"
             hint="Last name"
-
+            v-model="Last"
           />
           <q-input
              color="teal"
@@ -36,16 +37,18 @@
             type="email"
             label=" Enter Your email *"
             hint="email "
+            v-model="email"
 
           />
 
 
           <q-input
-                     color="teal"
-
+             color="teal"
             filled
             type="password"
             label="Enter Your Passord *"
+            v-model="pass"
+
 
           />
 
@@ -66,6 +69,17 @@
 <script>
 export default {
    name: 'Registration',
+
+
+   data(){
+     return{
+
+       first:"",
+       Last:"",
+       email:"",
+       pass:""
+     }
+   }
 }
 </script>
 

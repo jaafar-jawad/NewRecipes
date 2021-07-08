@@ -5,8 +5,10 @@
     <h4 class="PageTitel">welcom to newrecipes page</h4>
     <h5 class="PageTitel">Here you can Add new Recipes enjo</h5>
 
-    <AddRecipes/>
-    <ListRecipes/>
+            <AddRecipes/>
+
+            <ListRecipes/>
+
 
   </q-page>
 </template>
@@ -30,6 +32,13 @@ export default {
 
 
 <style  scoped>
+
+
+
+main.q-page.q-layout-padding.add {
+      min-height: 100px !important;
+
+}
 
 .PageTitel{
 
