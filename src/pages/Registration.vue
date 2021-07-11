@@ -9,6 +9,8 @@
      <q-form
 
       class="q-gutter-md "
+      @submit.prevent="hundle"
+
     >
 
 
@@ -19,7 +21,9 @@
             label="First name *"
             hint=" first Name "
             v-model="first"
-
+            lazy-rules
+            filled
+            :rules="[ val => val && val.length > 0 || 'Please type something']"
           />
           <q-input
            color="teal"
@@ -28,12 +32,12 @@
             label=" Enter Your Last name *"
             hint="Last name"
             v-model="Last"
+            lazy-rules
+
           />
           <q-input
              color="teal"
-
             filled
-
             type="email"
             label=" Enter Your email *"
             hint="email "
@@ -53,10 +57,13 @@
           />
 
 
-          <div>
-            <q-btn label="Submit" type="submit" color="primary"/>
-            <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+          <div class="end" >
+            <q-btn  label="Submit" type="submit" color="teal"/>
+             <span class="material-icons">
+                face
+             </span>
           </div>
+
     </q-form>
 
 
@@ -67,19 +74,45 @@
 </template>
 
 <script>
+
 export default {
    name: 'Registration',
 
 
-   data(){
-     return{
 
-       first:"",
-       Last:"",
-       email:"",
-       pass:""
-     }
-   }
+
+
+
+        data(){
+          return{
+
+            first:"",
+            Last:"",
+            email:"",
+            pass:"",
+
+          }
+        },
+        methods:{
+
+          hundle(){
+            const data={
+               first:this.first,
+            Last:this.Last,
+            email:this.email,
+            pass:this.pass
+            };
+          console.log(data)
+
+          }
+
+
+        }
+
+
+
+
+
 }
 </script>
 
@@ -106,4 +139,18 @@ max-width: 500px ;
   padding: 20px;
 
 }
+span.material-icons {
+
+  background-color: rgb(5, 131, 110);
+  color: #ccc;
+  font-size: 50px;
+  border-radius: 50px;
+
+}
+
+.end {
+  padding: 20px;
+}
+
+
 </style>

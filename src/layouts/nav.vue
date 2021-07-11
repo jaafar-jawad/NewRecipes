@@ -2,7 +2,7 @@
   <q-layout view="hHh Lpr fFf "> <!-- Be sure to play with the Layout demo on docs -->
 
     <!-- (Optional) The Header -->
-    <q-header elevated>
+    <q-header elevated >
       <q-toolbar>
         <q-btn
           flat
@@ -12,15 +12,18 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
+        <q-toolbar-title class=" container ">
           Recipes
+          <span class="material-icons">
+            restaurant
+          </span>
         </q-toolbar-title>
       </q-toolbar>
 
 
+
     </q-header>
 
-    <!-- (Optional) The Footer -->
 
 
     <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
@@ -34,31 +37,36 @@
       <ul>
      <li >
         <q-route-tab
-          icon="map"
+          icon="account_circle"
           to="/Login"
           replace
           label="Login"
         />
     </li>
 
+
+<br>
     <li>
         <q-route-tab
-          icon="assignment"
+          icon="fingerprint"
           to="/"
           replace
           label="Registration"
         />
   </li>
 
-
+      <br>
     <li>
         <q-route-tab
-          icon="assignment"
+          icon="fastfood"
+
           to="/NewRecipes"
           replace
           label="NewRecipes"
         />
   </li>
+
+
 
         </ul>
       </q-tabs>
@@ -121,5 +129,14 @@ li  {
 }
 .q-layout {
     min-height: 10px;
+}
+
+
+span.material-icons {
+    float: right;
+    margin-right: 50px;
+    border-radius: 50px;
+    font-size: 30px;
+
 }
 </style>

@@ -2,45 +2,59 @@
 const state ={
 
   Recipes:[
-
     {
-      nam:''
+      dec:'bla bla bla bla bla',
 
-    }
-    ,
+      title:"cokies",
+      id:1 ,
+      omag:''
 
-    {
-      desc:''
-    }
-  ]
+    },
+
+  ],
+
 
 }
 
-const mutations ={
+  const getters ={
+        allRecipes:(state)=>{
 
-
- // addRecipes:(state , nam)=>{
-    //state.Recipes.push(state.nam)
-    addRecipes:(state,nam)=>{
-      console.log('heelo')
+         return state.Recipes
+        }
 
     }
-
- // }
-
-}
-
 const actions ={
-  addRecipes({commit},nam){
-    commit('addRecipes',nam)
+        addToRecipes({commit},title){
 
-  }
+        commit("addRecipes", title)
+        },
+        addToRecipes({commit},dec){
 
-}
+          commit("addRecipes", dec)
+          },
 
-const getters ={
 
-  }
+   }
+
+
+      const mutations ={
+
+        savrecepies:(state)=>{
+          state.Recipes=Recipes
+          localStorage.setItem('save', JSON.stringify(savrecepies))
+        },
+
+        addRecipes:(state,title)=>{
+          state.Recipes.push(title)
+          Recipes.title=""
+          console.log(title)
+        },
+        addRecipes:(state,dec)=>{
+          state.Recipes.push(dec)
+          console.log(dec)
+        }
+
+  };
 
 
 

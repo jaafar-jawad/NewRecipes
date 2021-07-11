@@ -33,9 +33,10 @@
 
               />
 
-           <q-btn  class="zer" color="secondary" label="Login" />
-
-
+           <q-btn   class="zer" color="secondary" label="Login" />
+           <span class="material-icons">
+              login
+          </span>
       </q-form>
 
   </q-page>
@@ -52,11 +53,10 @@ export default {
         pass:""
 
       }
+    },
 
 
 
-
-    }
 
 }
 </script>
@@ -82,6 +82,11 @@ max-width: 500px ;
   border: 2px solid rgb(25, 158, 140);
   border-radius: 10px;
   padding: 15px;
+}
+
+span.material-icons {
+    font-size: xx-large;
+    color: teal;
 }
 
 

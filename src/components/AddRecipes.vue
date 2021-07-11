@@ -13,21 +13,10 @@
               color="teal"
               type="name"
                 label=" ADD New Recipes *"
-                v-model="name"
+                v-model="rectext"
 
               />
-          <q-btn   @click="addRecipes" class="zer" color="secondary" label="ADD" />
-
-        </q-card-section>
-         <q-card-section class="q-pt-none ">
-          <q-input
-              color="teal"
-              type="name"
-                label=" ADD New Recipes *"
-
-
-              />
-          <q-btn    class="zer" color="secondary" label="ADD" />
+          <q-btn   @click="addToRecipesI" class="zer" color="secondary" label="ADD" />
 
         </q-card-section>
 
@@ -44,6 +33,8 @@
 
 <script>
 import { ref } from 'vue';
+import { mapActions } from 'vuex';
+import v1 from 'uuid'
 export default {
 
   name: 'AddRecipes',
@@ -55,18 +46,29 @@ export default {
     }
   },
 
-      data(){
-        return{
-          name:'',
-          dec:''
-          }
-        },
+
+    data(){
+
+      return{
+        rectext: ""
+      }
+    },
 
 
   methods:{
-    addRecipes(){
-    this.$store.dispatch('addRecipes')
-    }
+
+    ...mapActions(["addToRecipes"]),
+
+          addToRecipesI(){
+
+            this.addToRecipes({
+              id: v1(),
+              title:this.rectext
+            });
+
+
+          }
+
   }
 
 
