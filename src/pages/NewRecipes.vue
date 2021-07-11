@@ -19,7 +19,11 @@
           <addform />
       <q-table v-for="(item ,index) in allRecipes" :key="index"   :rows="allRecipes"
   />
-  
+    <button  >delet</button>
+
+
+
+
 
     </div>
 
